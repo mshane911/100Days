@@ -1,0 +1,97 @@
+html{
+    background-color: rgb(50, 50, 50);
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    margin: 0;
+    height: 100%;
+}
+body{
+    margin: 0;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+  
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+.title-container{
+    display: grid;
+    height: 100vh;
+    align-content: center;
+    row-gap: 0vh;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0,0,0, 0.55)), url(assets/Title\ Cover.jpg);
+    background-size:cover;
+    background-position-y: bottom;
+    animation: fade-in 1s forwards;
+}
+
+#title-text{
+    color: rgb(110, 149, 255);
+    font-size: 5vw;
+    font-family: "Pacifico", cursive;
+    font-weight: 300;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0.1vw;
+    word-spacing: 0vw;
+    margin: -4vh;
+    animation: fade-in 1.5s forwards;
+}
+
+#title-desc{
+    color: white;
+    font-size: 4vw;
+    font-family: "Great Vibes", cursive;
+    font-weight: 200;
+    letter-spacing: 0.5vw;
+    word-spacing: 1vw;
+    text-align: center;
+    margin: 0;
+    animation: fade-in 1s forwards;
+}
+
+.reason-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.reason-item{
+    background-color: navy;
+    border: double;
+    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+    /* position: relative; */
+    box-sizing: border-box;
+}
+
+.reason-item.align-top {
+    align-items: flex-start;
+  }
+
+@keyframes fade-in {
+    0%{
+        opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+}
