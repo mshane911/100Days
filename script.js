@@ -1,4 +1,4 @@
-const password = prompt("Input Our Date: ", "");
+const password = prompt("Input Our Date (ddmmyy): ", "");
 if (password === "210124") {
 	document.getElementById("body").style.display = "block";
 }
