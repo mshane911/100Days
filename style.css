@@ -1,7 +1,6 @@
 html {
 	background-color: rgb(50, 50, 50);
 	-webkit-overflow-scrolling: touch;
-	overflow-scrolling: touch;
 	margin: 0;
 	height: 100%;
 }
@@ -9,7 +8,6 @@ body {
 	margin: 0;
 	-ms-overflow-style: none;
 	-webkit-overflow-scrolling: touch;
-	overflow-scrolling: touch;
 
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -31,7 +29,8 @@ body {
 		url(assets/Title\ Cover.jpg);
 	background-size: cover;
 	background-position-y: bottom;
-	animation: fade-in 1s forwards;
+	opacity: 0;
+	animation: title-fade-in 1.5s forwards;
 }
 
 #title-text {
@@ -43,7 +42,9 @@ body {
 	letter-spacing: 0.1vw;
 	word-spacing: 0vw;
 	margin: -4vh;
-	animation: fade-in 1.5s forwards;
+	opacity: 0;
+	animation: fade-in 2s forwards;
+	animation-delay: 2s;
 }
 
 #title-desc {
@@ -55,7 +56,9 @@ body {
 	word-spacing: 1vw;
 	text-align: center;
 	margin: 0;
-	animation: fade-in 1s forwards;
+	opacity: 0;
+	animation: fade-in 2s forwards;
+	animation-delay: 2.5s;
 }
 
 .reason-container {
@@ -83,6 +86,7 @@ body {
 	background-position-y: "center";
 	background-repeat: no-repeat;
 	background-position-x: center;
+	animation: fade-in 1.5s forwards;
 }
 
 .reason-item.align-top {
@@ -108,6 +112,25 @@ body {
 	color: white;
 	text-align: justify;
 	animation: fade-in 1.5s forwards;
+}
+
+@keyframes title-fade-in {
+	0% {
+		opacity: 0%;
+		background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
+			url(assets/Title\ Cover.jpg);
+
+		background-size: cover;
+		background-position-y: bottom;
+	}
+	100% {
+		opacity: 100%;
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+			url(assets/Title\ Cover.jpg);
+
+		background-size: cover;
+		background-position-y: bottom;
+	}
 }
 
 @keyframes fade-in {

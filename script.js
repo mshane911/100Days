@@ -1,3 +1,8 @@
+const password = prompt("Input Our Date: ", "");
+if (password === "210124") {
+	document.getElementById("body").style.display = "block";
+}
+
 const reasonContainer = document.getElementById("reason-container");
 
 const csvFile = `reason,background
@@ -40,9 +45,28 @@ for (let i = 0; i < data.length; i++) {
 		"linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(assets/100/" +
 		backgroundIndex +
 		".jpg)";
+
+	reasonItem.style.animation = "fade-in 1.5s forwards";
 	reasonItem.style.backgroundSize = "contain";
 	reasonItem.style.backgroundPositionY = "center";
 	reasonTitleElement.appendChild(reasonTitleText);
 	reasonItem.appendChild(reasonTitleElement);
 	reasonContainer.appendChild(reasonItem);
 }
+
+gsap.registerPlugin(ScrollTrigger);
+
+let sections = gsap.utils.toArray(".reason-item");
+
+gsap.to(sections, {
+	xPercent: -97.25 * (sections.length - 1),
+	ease: "none",
+	snap: 1 / (sections.length - 1),
+	scrollTrigger: {
+		trigger: ".reason-container",
+		pin: true,
+		scrub: 1,
+		// base vertical scrolling on how wide the container is so it feels more natural.
+		end: "+=5000",
+	},
+});
